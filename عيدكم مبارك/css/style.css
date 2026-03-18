@@ -1,0 +1,715 @@
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+
+     body {
+         font-family: 'Amiri', 'Traditional Arabic', serif;
+         min-height: 100vh;
+         background: linear-gradient(135deg, #1e3c3f 0%, #315d5f 100%);
+         overflow-x: hidden;
+         position: relative;
+     }
+
+     /* الخلفية المتحركة */
+     .background-animation {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 0;
+     }
+
+     .star {
+         position: absolute;
+         background-color: #fff;
+         border-radius: 50%;
+         animation: twinkle 2s infinite ease-in-out;
+     }
+
+     @keyframes twinkle {
+
+         0%,
+         100% {
+             opacity: 0.3;
+             transform: scale(1);
+         }
+
+         50% {
+             opacity: 1;
+             transform: scale(1.2);
+         }
+     }
+
+     /* الفوانيس */
+     .lanterns-container {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         pointer-events: none;
+         z-index: 1;
+     }
+
+     .lantern {
+         position: absolute;
+         width: 60px;
+         height: 80px;
+         animation: swing 3s infinite ease-in-out;
+         transform-origin: top center;
+     }
+
+     .lantern::before {
+         content: '';
+         position: absolute;
+         top: -10px;
+         left: 20px;
+         width: 20px;
+         height: 15px;
+         background: #b8860b;
+         border-radius: 5px 5px 0 0;
+     }
+
+     .lantern::after {
+         content: '';
+         position: absolute;
+         top: 5px;
+         left: 5px;
+         width: 50px;
+         height: 70px;
+         background: linear-gradient(145deg, #ffd700, #ffa500);
+         border-radius: 20px 20px 15px 15px;
+         box-shadow: 0 0 20px #ffd700;
+         animation: glow 2s infinite alternate;
+     }
+
+     @keyframes swing {
+
+         0%,
+         100% {
+             transform: rotate(3deg);
+         }
+
+         50% {
+             transform: rotate(-3deg);
+         }
+     }
+
+     @keyframes glow {
+         from {
+             box-shadow: 0 0 20px #ffd700;
+         }
+
+         to {
+             box-shadow: 0 0 40px #ffa500, 0 0 60px #ff8c00;
+         }
+     }
+
+     /* المحتوى الرئيسي */
+     .content {
+         position: relative;
+         z-index: 2;
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         padding: 20px;
+         margin-top: 50px;
+     }
+
+     /* بطاقة التهنئة */
+     .e-card {
+         background: rgba(255, 255, 255, 0.95);
+         backdrop-filter: blur(10px);
+         border-radius: 30px;
+         padding: 40px;
+         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+         text-align: center;
+         max-width: 600px;
+         width: 100%;
+         animation: card-appear 1.5s ease-out, float 4s infinite ease-in-out;
+         transform-origin: center;
+         border: 3px solid rgba(255, 215, 0, 0.3);
+
+     }
+
+     @keyframes card-appear {
+         from {
+             opacity: 0;
+             transform: translateY(50px) scale(0.8);
+         }
+
+         to {
+             opacity: 1;
+             transform: translateY(0) scale(1);
+         }
+     }
+
+     @keyframes float {
+
+         0%,
+         100% {
+             transform: translateY(0);
+         }
+
+         50% {
+             transform: translateY(-10px);
+         }
+     }
+
+     /* الهلال والنجوم */
+     .crescent-container {
+         margin-bottom: 20px;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+     }
+
+     .crescent1 {
+         animation: rotate 10s infinite linear;
+
+     }
+
+     .crescent2 {
+         animation: rotate 10s infinite linear;
+
+     }
+
+     .crescent3 {
+         animation: rotate 10s infinite linear;
+
+     }
+
+
+     @keyframes rotate {
+         from {
+             transform: rotate(0deg);
+         }
+
+         to {
+             transform: rotate(360deg);
+         }
+     }
+
+     .crescent {
+         font-size: 60px;
+         display: inline-block;
+         animation: crescent-glow 2s infinite alternate;
+     }
+
+     @keyframes crescent-glow {
+         from {
+             text-shadow: 0 0 10px #ffd700;
+         }
+
+         to {
+             text-shadow: 0 0 30px #ffd700, 0 0 50px #ffa500;
+         }
+     }
+
+     /* اسم المبرمج */
+     .developer-name {
+         font-size: 1.8rem;
+         color: #b8860b;
+         margin-bottom: 10px;
+         animation: developer-pulse 3s infinite;
+     }
+
+     @keyframes developer-pulse {
+
+         0%,
+         100% {
+             opacity: 0.8;
+             transform: scale(1);
+         }
+
+         50% {
+             opacity: 1;
+             transform: scale(1.05);
+             color: #c8a508;
+         }
+     }
+
+     /* النص الرئيسي */
+     h1 {
+         font-size: 3.5rem;
+         color: #1e3c3f;
+         margin-bottom: 15px;
+         animation: text-flicker 3s infinite;
+     }
+
+     @keyframes text-flicker {
+
+         0%,
+         100% {
+             opacity: 1;
+         }
+
+         92% {
+             opacity: 1;
+         }
+
+         93% {
+             opacity: 0.2;
+         }
+
+         94% {
+             opacity: 1;
+         }
+
+         95% {
+             opacity: 0.2;
+         }
+
+         96% {
+             opacity: 1;
+         }
+     }
+
+     .arabic-text {
+         font-size: 2rem;
+         color: #315d5f;
+         margin-bottom: 30px;
+         min-height: 100px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+     }
+
+     #greeting-text {
+         animation: slide-in 0.5s ease-out;
+         font-size: 1.8rem;
+         line-height: 1.6;
+     }
+
+     #greeting-sender {
+         font-size: 1.2rem;
+         color: #b8860b;
+         margin-top: 10px;
+         animation: sender-appear 0.5s ease-out;
+     }
+
+     @keyframes slide-in {
+         from {
+             opacity: 0;
+             transform: translateX(-50px);
+         }
+
+         to {
+             opacity: 1;
+             transform: translateX(0);
+         }
+     }
+
+     @keyframes sender-appear {
+         from {
+             opacity: 0;
+             transform: translateY(20px);
+         }
+
+         to {
+             opacity: 1;
+             transform: translateY(0);
+         }
+     }
+
+     /* الأزرار */
+     .buttons-container {
+         display: flex;
+         gap: 20px;
+         justify-content: center;
+         margin: 30px 0;
+         flex-wrap: wrap;
+     }
+
+     .btn {
+         padding: 15px 30px;
+         border: none;
+         border-radius: 50px;
+         font-size: 1.2rem;
+         cursor: pointer;
+         transition: all 0.3s;
+         font-family: inherit;
+         position: relative;
+         overflow: hidden;
+     }
+
+     .btn-primary {
+         background: linear-gradient(45deg, #1e3c3f, #315d5f);
+         color: white;
+         animation: pulse 2s infinite;
+     }
+
+     .btn-secondary {
+         background: linear-gradient(45deg, #b8860b, #ffd700);
+         color: #1e3c3f;
+     }
+
+     .btn-video {
+         background: linear-gradient(45deg, #8B4513, #CD853F);
+         color: white;
+         animation: pulse-video 2s infinite;
+     }
+
+     @keyframes pulse-video {
+
+         0%,
+         100% {
+             transform: scale(1);
+             box-shadow: 0 0 10px #CD853F;
+         }
+
+         50% {
+             transform: scale(1.05);
+             box-shadow: 0 0 20px #8B4513;
+         }
+     }
+
+     .btn:hover {
+         transform: scale(1.1);
+         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+     }
+
+     @keyframes pulse {
+
+         0%,
+         100% {
+             transform: scale(1);
+         }
+
+         50% {
+             transform: scale(1.05);
+         }
+     }
+
+     /* الهلال المتحرك */
+     .floating-crescents {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         pointer-events: none;
+         z-index: 1;
+     }
+
+     .floating-crescent {
+         position: absolute;
+         font-size: 30px;
+         animation: float-around 15s infinite linear;
+         opacity: 0.5;
+     }
+
+     @keyframes float-around {
+         from {
+             transform: translate(0, 0) rotate(0deg);
+         }
+
+         to {
+             transform: translate(100vw, 100vh) rotate(360deg);
+         }
+     }
+
+     /* الساعة الرقمية */
+     .digital-clock {
+         background: rgba(30, 60, 63, 0.1);
+         border-radius: 50px;
+         padding: 20px;
+         margin-top: 30px;
+         border: 2px solid #b8860b;
+     }
+
+     .clock-title {
+         font-size: 1.2rem;
+         color: #1e3c3f;
+         margin-bottom: 10px;
+     }
+
+     .clock-display {
+         display: flex;
+         gap: 15px;
+         justify-content: center;
+         align-items: center;
+         font-size: 2.5rem;
+         font-weight: bold;
+         color: #b8860b;
+         direction: ltr;
+     }
+
+     .time-block {
+         background: rgba(255, 255, 255, 0.3);
+         padding: 10px 20px;
+         border-radius: 15px;
+         animation: time-pulse 1s infinite;
+         min-width: 80px;
+         box-shadow: 0 0 15px rgba(184, 134, 11, 0.3);
+     }
+
+     @keyframes time-pulse {
+
+         0%,
+         100% {
+             transform: scale(1);
+             background: rgba(255, 255, 255, 0.3);
+         }
+
+         50% {
+             transform: scale(1.05);
+             background: rgba(255, 215, 0, 0.3);
+         }
+     }
+
+     .time-separator {
+         animation: blink 1s infinite;
+         font-size: 2.5rem;
+     }
+
+     @keyframes blink {
+
+         0%,
+         50% {
+             opacity: 1;
+         }
+
+         51%,
+         100% {
+             opacity: 0.3;
+         }
+     }
+
+     .date-display {
+         margin-top: 10px;
+         font-size: 1.2rem;
+         color: #315d5f;
+     }
+
+     /* البالونات */
+     .balloon {
+         position: fixed;
+         bottom: -100px;
+         font-size: 40px;
+         animation: float-up 8s infinite ease-in;
+         z-index: 3;
+         pointer-events: none;
+     }
+
+     @keyframes float-up {
+         to {
+             transform: translateY(-100vh);
+         }
+     }
+
+     /* رسائل التهنئة المتحركة */
+     .greetings-marquee {
+         position: fixed;
+         top: 0px;
+         width: 100%;
+         background: rgba(35,69,72,0.7);
+         backdrop-filter: blur(5px);
+         padding: 10px;
+         z-index: 4;
+         overflow: hidden;
+     }
+
+     .marquee-content {
+         display: inline-block;
+         animation: marquee 20s infinite linear;
+         white-space: nowrap;
+         color: white;
+         font-size: 1.2rem;
+     }
+
+     .marquee-content span {
+         margin: 0 20px;
+     }
+
+     @keyframes marquee {
+         from {
+             transform: translateX(100%);
+         }
+
+         to {
+             transform: translateX(-100%);
+         }
+     }
+
+     /* تأثير النقر */
+     .click-effect {
+         position: absolute;
+         pointer-events: none;
+         font-size: 20px;
+         animation: click-pop 1s forwards;
+     }
+
+     @keyframes click-pop {
+         from {
+             opacity: 1;
+             transform: scale(0.5);
+         }
+
+         to {
+             opacity: 0;
+             transform: scale(2);
+         }
+     }
+
+     /* نافذة الفيديو المنبثقة */
+     .video-modal {
+         display: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(0, 0, 0, 0.9);
+         z-index: 9999;
+         justify-content: center;
+         align-items: center;
+         animation: modal-appear 0.5s ease-out;
+     }
+
+     @keyframes modal-appear {
+         from {
+             opacity: 0;
+             transform: scale(0.8);
+         }
+
+         to {
+             opacity: 1;
+             transform: scale(1);
+         }
+     }
+
+     .video-container {
+         position: relative;
+         width: 90%;
+         max-width: 800px;
+         background: #000;
+         border-radius: 20px;
+         overflow: hidden;
+         box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+         border: 3px solid #b8860b;
+     }
+
+     .video-wrapper {
+         position: relative;
+         width: 100%;
+         padding-top: 56.25%;
+         /* 16:9 Aspect Ratio */
+     }
+
+     .video-wrapper iframe,
+     .video-wrapper video {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border: none;
+     }
+
+     .close-video {
+         position: absolute;
+         top: -40px;
+         right: 10px;
+         background: #ff4500;
+         color: white;
+         border: none;
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         font-size: 24px;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: all 0.3s;
+         z-index: 10;
+     }
+
+     .close-video:hover {
+         transform: scale(1.1);
+         background: #ff6347;
+     }
+
+     .video-title {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+         color: #ffd700;
+         padding: 20px;
+         text-align: center;
+         font-size: 1.2rem;
+         z-index: 5;
+     }
+
+     /* تصميم متجاوب */
+     @media (max-width: 768px) {
+         h1 {
+             font-size: 2.5rem;
+         }
+
+         .arabic-text {
+             font-size: 1.5rem;
+         }
+
+         #greeting-text {
+             font-size: 1.3rem;
+         }
+
+         .e-card {
+             padding: 20px;
+         }
+
+         .buttons-container {
+             flex-direction: column;
+         }
+
+         .clock-display {
+             font-size: 1.8rem;
+         }
+
+         .time-block {
+             min-width: 60px;
+             padding: 5px 10px;
+         }
+
+         .video-container {
+             width: 95%;
+         }
+
+         .close-video {
+             top: 5px;
+             right: 5px;
+         }
+     }
+
+     /* تأثيرات إضافية للمفرقعات */
+     .enhanced-confetti {
+         position: fixed;
+         pointer-events: none;
+         z-index: 9998;
+         animation: confetti-fall linear forwards;
+     }
+
+     @keyframes confetti-fall {
+         from {
+             transform: translateY(-10vh) rotate(0deg);
+         }
+
+         to {
+             transform: translateY(110vh) rotate(720deg);
+         }
+     }
+
+     /* تأثير الصوت */
+     .sound-effect {
+         display: none;
+     }

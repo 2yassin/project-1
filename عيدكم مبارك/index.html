@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد فطر مبارك - م.ياسين محمد سعيد البكور</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- النجوم المتحركة -->
+    <div class="background-animation" id="stars"></div>
+
+    <!-- الفوانيس -->
+    <div class="lanterns-container" id="lanterns"></div>
+
+    <!-- الهلال الطائر -->
+    <div class="floating-crescents" id="crescents"></div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="content">
+        <div class="e-card">
+            <div class="crescent-container">
+                <div class="crescent1">
+                    <span class="crescent ">🌙</span>
+                </div>
+                <div class="crescent2">
+                    <span class="crescent " style="animation-delay: 0.5s;">⭐</span>
+
+                </div>
+                <div class="crescent3">
+                    <span class="crescent " style="animation-delay: 1s;">✨</span>
+
+                </div>
+            </div>
+
+            <div class="developer-name">
+                م. ياسين محمد سعيد البكور
+            </div>
+
+            <h1>🎉 عيد فطر مبارك 🎉</h1>
+
+            <div class="arabic-text">
+                <p id="greeting-text">تقبل الله منا ومنكم صالح الأعمال</p>
+                <p id="greeting-sender">مع أطيب التهاني من م. ياسين محمد سعيد البكور</p>
+            </div>
+
+            <div class="buttons-container">
+                <button class="btn btn-primary" onclick="changeGreeting()">🎁 رسالة تهنئة جديدة</button>
+                <button class="btn btn-secondary" onclick="launchEnhancedConfetti()">🎊 أطلق مفرقعات مطورة</button>
+                <button class="btn btn-primary" onclick="addBalloon()">🎈 بالون</button>
+                <button class="btn btn-video" onclick="openEidVideo()">🎬 فيديو تهنئة</button>
+            </div>
+
+            <!-- الساعة الرقمية -->
+            <div class="digital-clock">
+                <div class="clock-title"> الساعة الآن</div>
+                <div class="clock-display" id="clock">
+                    <span class="time-block" id="hours">00</span>
+                    <span class="time-separator">:</span>
+                    <span class="time-block" id="minutes">00</span>
+                    <span class="time-separator">:</span>
+                    <span class="time-block" id="seconds">00</span>
+                </div>
+                <div class="date-display" id="date"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الشريط المتحرك -->
+    <div class="greetings-marquee">
+        <div class="marquee-content" id="marquee">
+            <span>✨ عيد فطر مبارك - م. ياسين محمد سعيد البكور ✨</span>
+            <span>🌙 تقبل الله طاعاتكم 🌙</span>
+            <span> كل عام وأنتم إلى الله أقرب 🎊</span>
+            <span>⭐🎊 عيد سعيد ⭐</span>
+            <span>🌸 كل سنة وأنتم طيبين 🌸</span>
+        </div>
+    </div>
+
+    <!-- نافذة الفيديو المنبثقة -->
+    <!-- نافذة الفيديو المنبثقة -->
+<div class="video-modal" id="videoModal" onclick="closeVideoOnClickOutside(event)">
+    <div class="video-container">
+        <button class="close-video" onclick="closeVideo()">✕</button>
+        <div class="video-wrapper" id="videoWrapper">
+            <!-- فيديوهات متعددة للاختيار - تم إزالة autoplay -->
+            <video id="eidVideoPlayer" controls preload="none">
+                <source src="oudui/WhatsApp Video 2026-03-18 at 3.55.47 PM.mp4" type="video/mp4">
+                <!-- ملاحظة: هذا رابط تجريبي، يمكنك استبداله برابط فيديو حقيقي -->
+                <source src="oudui/WhatsApp Video 2026-03-18 at 3.55.47 PM.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو
+            </video>
+            <div class="video-title">🎬 تهنئة خاصة بعيد الفطر من م. ياسين محمد سعيد البكور 🎬</div>
+        </div>
+    </div>
+</div>
+
+    <!-- عناصر صوتية (اختيارية) -->
+    <audio id="confettiSound" class="sound-effect">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script/script.js">
+    </script>
+</body>
+
+</html>
